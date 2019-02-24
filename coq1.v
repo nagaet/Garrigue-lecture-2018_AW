@@ -187,7 +187,7 @@ nat_rec is defined *)
 Fixpoint plus (m n : nat) {struct m} : nat := (* 帰納法の対象を明示する *)
 match m with (* 減らないとエラーになる *)
 | O => n
-| S m’ => S (plus m n)
+| S m' => S (plus m n)
 end.
 Error: Recursive definition of plus is ill-formed.
 In environment ...
