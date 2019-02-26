@@ -70,8 +70,11 @@ match l with
 end.
 
 Lemma reduce_fold : forall l, reduce l = fold_right op e l.
+Proof.
+Admitted.
 
 Lemma reduce_app : forall l1 l2, reduce (l1 ++ l2) = op (reduce l1) (reduce l2).
+Proof.
+Admitted.
 
 End Coq5.
-

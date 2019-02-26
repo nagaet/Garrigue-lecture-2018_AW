@@ -228,8 +228,10 @@ Module Ex4_2.
 Require Import ZArith.
 Open Scope Z_scope.
 
+(*
 Fixpoint eval_poly (p : list Z) (x : Z) := ...
- Eval compute in eval_poly (1 :: 2 :: 3 :: nil) 5. (* = 1 + 2*5 + 3*5*5 *)
+Eval compute in eval_poly (1 :: 2 :: 3 :: nil) 5. (* = 1 + 2*5 + 3*5*5 *)
+ *)
 
 End Ex4_2.
 
@@ -252,10 +254,15 @@ Proof.
 Qed.
 
 Theorem or'_ok : forall P Q, or' P Q <-> P \/ Q.
+Proof.
+Admitted.
 
 Theorem False'_ok : False' <-> False.
+Proof.
+Admitted.
 
 Theorem Equal'_ok : forall T x y, Equal' T x y <-> x = y.
+Proof.
+Admitted.
 
 (* ó˚èKñ‚ëË 3.2 orÅf okÅAFalseÅf ok Ç®ÇÊÇ— EqualÅf ok ÇèÿñæÇπÇÊ *)
-

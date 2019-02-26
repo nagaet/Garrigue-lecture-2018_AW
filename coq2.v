@@ -249,11 +249,25 @@ Section Coq2.
 Variables P Q R : Prop.
 
 Theorem imp_trans : (P -> Q) -> (Q -> R) -> P -> R.
+Proof.
+Admitted.
 Theorem not_false : ~False.
+Proof.
+Admitted.
 Theorem double_neg : P -> ~~P.
+Proof.
+Admitted.
 Theorem contraposition : (P -> Q) -> ~Q -> ~P.
+Proof.
+Admitted.
 Theorem and_assoc : P /\ (Q /\ R) -> (P /\ Q) /\ R.
+Proof.
+Admitted.
 Theorem and_distr : P /\ (Q \/ R) -> (P /\ Q) \/ (P /\ R).
+Proof.
+Admitted.
 Theorem absurd : P -> ~P -> Q.
+Proof.
+Admitted.
 
 End Coq2.
