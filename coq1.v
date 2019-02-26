@@ -252,7 +252,7 @@ Eval compute in (" ")%char. (* 文字リテラル *)
 
 Definition remove_head_space s := (* 先頭の空白を一個取る *)
 match s with
-| String " " s’ => s’
+| String " " s' => s'
 | _ => s
 end.
 
