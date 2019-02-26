@@ -216,8 +216,8 @@ Eval compute in plus (S (S O)) (S O). (* 式を評価する *)
 (* = S (S (S O)) *)
 (* : nat         *)
 
-Fixpoint mult (m n : nat) struct m : nat := O.
-Eval compute in mult (S (S O)) (S O).  *)
+Fixpoint mult (m n : nat) {struct m} : nat := O.
+Eval compute in mult (S (S O)) (S O).
 (* = S (S O) (* 期待している値 *)  *)
 (*: nat                            *)
 End MyNat.
