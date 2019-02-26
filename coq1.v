@@ -216,8 +216,8 @@ Eval compute in plus (S (S O)) (S O). (* 式を評価する *)
 (* = S (S (S O)) *)
 (* : nat         *)
 
-Fixpoint mult (m n : nat) struct m : nat := O.
-Eval compute in mult (S (S O)) (S O).  *)
+Fixpoint mult (m n : nat) {struct m} : nat := O.
+Eval compute in mult (S (S O)) (S O).
 (* = S (S O) (* 期待している値 *)  *)
 (*: nat                            *)
 End MyNat.
@@ -252,7 +252,7 @@ Eval compute in (" ")%char. (* 文字リテラル *)
 
 Definition remove_head_space s := (* 先頭の空白を一個取る *)
 match s with
-| String " " s’ => s’
+| String " " s' => s'
 | _ => s
 end.
 

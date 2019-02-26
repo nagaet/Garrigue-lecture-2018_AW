@@ -155,7 +155,17 @@ Qed.
 
 (* —ûK–â‘è 2.1 ˆÈ‰º‚Ì’è—‚ğØ–¾‚¹‚æD*)
 Theorem plus_0 : forall n, n + 0 = n.
+Proof.
+Admitted.
 Theorem plus_m_Sn : forall m n, m + (S n) = S (m + n).
+Proof.
+Admitted.
 Theorem plus_comm : forall m n, m + n = n + m.
+Proof.
+Admitted.
 Theorem plus_distr : forall m n p, (m + n) * p = m * p + n * p.
+Proof.
+Admitted.
 Theorem mult_assoc : forall m n p, m * (n * p) = (m * n) * p.
+Proof.
+Admitted.

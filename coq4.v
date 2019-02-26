@@ -228,19 +228,21 @@ Module Ex4_2.
 Require Import ZArith.
 Open Scope Z_scope.
 
+(*
 Fixpoint eval_poly (p : list Z) (x : Z) := ...
- Eval compute in eval_poly (1 :: 2 :: 3 :: nil) 5. (* = 1 + 2*5 + 3*5*5 *)
+Eval compute in eval_poly (1 :: 2 :: 3 :: nil) 5. (* = 1 + 2*5 + 3*5*5 *)
+ *)
 
 End Ex4_2.
 
 (* ‘½‘Š«‚Æ˜_— Coq ‚Ì˜_—‰‰Zq‚Í Inductive ‚Å’è‹`‚³‚ê‚Ä‚¢‚é‚ªAÀ‚Í‘½‘Š“I‚È˜_—®‚Æ‚µ‚Ä’è‹`‚Å‚«‚éB*)
 
-Definition andf (P Q : Prop) := forall (X : Prop), (P -> Q -> X) -> X.
-Definition orf (P Q : Prop) := forall (X : Prop), (P -> X) -> (Q -> X) -> X.
-Definition Falsef := forall (X : Prop), X.
-Definition Equalf (T : Type) (x y : T) := forall (P : T -> Prop), P x <-> P y.
+Definition and' (P Q : Prop) := forall (X : Prop), (P -> Q -> X) -> X.
+Definition or' (P Q : Prop) := forall (X : Prop), (P -> X) -> (Q -> X) -> X.
+Definition False' := forall (X : Prop), X.
+Definition Equal' (T : Type) (x y : T) := forall (P : T -> Prop), P x <-> P y.
 
-Theorem andf_ok : forall P Q, andf P Q <-> P /\ Q.
+Theorem and'_ok : forall P Q, and' P Q <-> P /\ Q.
 Proof.
   split.
   intros.
@@ -251,11 +253,16 @@ Proof.
   apply pqx; assumption.
 Qed.
 
-Theorem orf_ok : forall P Q, orf P Q <-> P \/ Q.
+Theorem or'_ok : forall P Q, or' P Q <-> P \/ Q.
+Proof.
+Admitted.
 
-Theorem Falsef_ok : Falsef <-> False.
+Theorem False'_ok : False' <-> False.
+Proof.
+Admitted.
 
-Theorem Equalf_ok : forall T x y, Equalf T x y <-> x = y.
+Theorem Equal'_ok : forall T x y, Equal' T x y <-> x = y.
+Proof.
+Admitted.
 
 (* —ûK–â‘è 3.2 orf okAFalsef ok ‚¨‚æ‚Ñ Equalf ok ‚ğØ–¾‚¹‚æ *)
-

@@ -159,6 +159,7 @@ Qed.
 
 Theorem gcd_max : forall g m n,
 divides g m -> divides g n -> divides g (gcd m n).
+Proof.
+Admitted.
 
 (* —ûK–â‘è 3.1 Parameter ‚ğ Theorem ‚É•Ï‚¦CØ–¾‚ğŠ®¬‚³‚¹‚æD*)
-

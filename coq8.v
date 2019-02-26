@@ -64,6 +64,9 @@ Qed.
 End Div2.
 
 Import Div2.
+
+Notation double' := double.
+
 (* 偶数について *)
 Require Import Even. (* 標準ライブラリの Even を使う *)
 Print even. (* 授業で見たものと違い、相互再帰で定義されている *)
@@ -142,8 +145,8 @@ Proof.
   elim Hq.
   Check Zabs_nat.
   apply (main_thm (Zabs_nat p)).
-  replace (Div2.double (q * q)) with (2 * (q * q))
-    by (unfold Div2.double; ring).
+  replace (double' (q * q)) with (2 * (q * q))
+    by (unfold double'; ring).
   apply INR_eq. (* 実数の等式に変える *)
   repeat rewrite mult_INR.
   Check sqrt_def.
