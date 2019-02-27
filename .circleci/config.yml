@@ -1,0 +1,26 @@
+version: 2
+jobs:
+  build:
+    working_directory: ~/garriegue_coq_lecture
+    docker:
+      - image: coqorg/coq:8.9
+    steps:
+      - checkout
+      - run:
+          name: install
+          command: |
+            source ~/.profile
+            eval $(opam config env)
+            opam install -y coq-mathcomp-ssreflect
+      - run:
+          name: compile .v
+          command: |
+            source ~/.profile
+            ./configure.sh
+            make
+
+workflows:
+  version: 2
+  build_and_test:
+    jobs:
+      - build
